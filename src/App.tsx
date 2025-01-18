@@ -1,3 +1,4 @@
+import React from 'react';
 import { Authenticated, Refine } from '@refinedev/core';
 import { DevtoolsPanel, DevtoolsProvider } from '@refinedev/devtools';
 import { RefineKbar, RefineKbarProvider } from '@refinedev/kbar';
@@ -37,6 +38,7 @@ import {
 import { ForgotPassword } from './pages/forgotPassword';
 import { Login } from './pages/login';
 import { Register } from './pages/register';
+import { UsersList } from './pages/users';
 
 function App() {
   return (
@@ -70,6 +72,10 @@ function App() {
                     meta: {
                       canDelete: true,
                     },
+                  },
+                  {
+                    name: 'users',
+                    list: '/users',
                   },
                 ]}
                 options={{
@@ -134,6 +140,12 @@ function App() {
                       <Route
                         path="show/:id"
                         element={<CategoryShow />}
+                      />
+                    </Route>
+                    <Route path="/users">
+                      <Route
+                        index
+                        element={<UsersList />}
                       />
                     </Route>
                     <Route
