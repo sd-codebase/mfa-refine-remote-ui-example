@@ -1,9 +1,26 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import * as path from 'path';
+import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    federation({
+      name: 'remoteApp',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './UsersList': './src/pages/users/list',
+      },
+      shared: ['react', 'react-dom', 'antd'],
+    }),
+  ],
+  build: {
+    modulePreload: false,
+    target: 'esnext',
+    minify: false,
+    cssCodeSplit: false,
+  },
   css: {
     preprocessorOptions: {
       scss: {},
