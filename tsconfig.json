@@ -14,7 +14,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@host/*": ["src/*"],
+      "@host/components/*": ["src/components/*"],
+      "@host/pages/*": ["src/pages/*"],
+      "@host/styles/*": ["src/styles/*"],
+      "@host/types/*": ["src/types/*"]
+    }
   },
   "include": ["src"],
   "references": [

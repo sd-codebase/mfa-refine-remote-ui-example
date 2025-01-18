@@ -16,7 +16,8 @@
     "antd": "^5.17.0",
     "@ant-design/icons": "^5.5.1",
     "@uiw/react-md-editor": "^3.19.5",
-    "@refinedev/react-router": "^1.0.0"
+    "@refinedev/react-router": "^1.0.0",
+    "sass": "^1.71.1"
   },
   "devDependencies": {
     "@types/node": "^18.16.2",
@@ -29,13 +30,17 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
     "typescript": "^5.4.2",
-    "vite": "^4.3.1"
+    "vite": "^4.3.1",
+    "typescript-plugin-css-modules": "^5.0.1",
+    "husky": "^8.0.0"
   },
   "scripts": {
     "dev": "refine dev",
     "build": "tsc && refine build",
     "start": "refine start",
-    "refine": "refine"
+    "refine": "refine",
+    "prepare": "husky install",
+    "build:pre-commit": "vite build"
   },
   "browserslist": {
     "production": [
