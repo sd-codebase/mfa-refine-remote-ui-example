@@ -15,7 +15,7 @@ export const UsersList: React.FC<UserListProps> = ({ fromParent }) => {
       gap="8px"
       className={styles.userList}>
       <Typography.Text className={styles.pageHeading}>
-        UserList App
+        User List App
       </Typography.Text>
       {fromParent ? <Typography.Text>{fromParent}</Typography.Text> : null}
       <Button>Click me</Button>
